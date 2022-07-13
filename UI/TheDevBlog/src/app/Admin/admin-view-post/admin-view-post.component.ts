@@ -53,4 +53,13 @@ post: Post | undefined;
       )
     }
 
+
+    deletePost(): void{
+      this.postService.deletePost(this.post?.id)
+      .subscribe(
+        response => {
+          alert('Deleted Successfully!');
+        }
+      );
+    }
   }

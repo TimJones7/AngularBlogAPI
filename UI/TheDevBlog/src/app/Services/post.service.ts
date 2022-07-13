@@ -32,7 +32,7 @@ export class PostService {
     return this.http.post<Post>(this.apiBaseUrl + '/api/posts/', addPostRequest);
   }
 
-  deletePost(id: string): Observable<Post>{
+  deletePost(id: string | undefined): Observable<Post>{
     return this.http.delete<Post>(this.apiBaseUrl + '/api/posts/' + id);
   }
 
