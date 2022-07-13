@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminViewPostComponent } from './admin/admin-view-post/admin-view-post.component';
+import { FormsModule } from '@angular/forms';
+import { AdminAddPostComponent } from './admin/admin-add-post/admin-add-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminPostsComponent
+    AdminPostsComponent,
+    AdminViewPostComponent,
+    AdminAddPostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

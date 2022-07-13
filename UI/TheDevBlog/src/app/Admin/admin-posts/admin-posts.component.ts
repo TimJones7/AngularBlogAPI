@@ -15,11 +15,14 @@ export class AdminPostsComponent implements OnInit {
   constructor(private postService: PostService) { }
 
 
+
+  posts: Post[] = [];
+
   ngOnInit(): void {
     this.postService.getAllPosts()
     .subscribe(
       response =>{
-      console.log(response);
+      this.posts = response;
       }
     );
   }
