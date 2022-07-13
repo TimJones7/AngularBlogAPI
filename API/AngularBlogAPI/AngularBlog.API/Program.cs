@@ -14,6 +14,13 @@ builder.Services.AddDbContext<DevBlogDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TheDevBlogConnectionString"));
 });
 
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy("default", policy =>
+    {
+        policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -25,6 +32,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("default");
 
 app.UseAuthorization();
 
